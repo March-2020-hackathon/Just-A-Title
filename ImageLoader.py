@@ -26,7 +26,10 @@ class FoodClasses:
             for key in data:
                 new_key = key.lower()
                 if new_key not in self._corresponding_ingredients:
-                    self._corresponding_ingredients[new_key] = data[key]
+                    self._corresponding_ingredients[new_key] = []
+                    for item in data[key]:
+                        item = item.lower()
+                        self._corresponding_ingredients[new_key].append(item)
                 for ingredients in data[key]:
                     ingredients = ingredients.lower()
                     if ingredients not in self._corresponding_classes:
