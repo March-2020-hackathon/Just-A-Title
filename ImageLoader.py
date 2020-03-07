@@ -24,13 +24,15 @@ class FoodClasses:
         with open('Database.json') as json_file:
             data = json.load(json_file)
             for key in data:
-                if key not in self._corresponding_ingredients:
-                    self._corresponding_ingredients[key] = data[key]
+                new_key = key.lower()
+                if new_key not in self._corresponding_ingredients:
+                    self._corresponding_ingredients[new_key] = data[key]
                 for ingredients in data[key]:
+                    ingredients = ingredients.lower()
                     if ingredients not in self._corresponding_classes:
-                        self._corresponding_classes[ingredients] = [key]
+                        self._corresponding_classes[ingredients] = [new_key]
                     else:
-                        self._corresponding_classes[ingredients].append(key)
+                        self._corresponding_classes[ingredients].append(new_key)
             for ingredients in self._corresponding_classes:
                 self._corresponding_classes[ingredients] = set(self._corresponding_classes[ingredients])
                 self._corresponding_classes[ingredients] = list(self._corresponding_classes[ingredients])
@@ -69,4 +71,4 @@ class FoodClasses:
         classes
         :return: dict
         """
-        return self._corresponding_classes
+        return self._corresponding_ingredients
