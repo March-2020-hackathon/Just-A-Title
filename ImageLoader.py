@@ -70,3 +70,6 @@ class FoodClasses:
         :return: dict
         """
         return self._corresponding_classes
+    
+            
+
