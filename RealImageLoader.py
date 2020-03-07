@@ -26,7 +26,7 @@ class ImageReader:
         """
         if image not in self.content:
             img = cv2.imread(image)
-            text = pytesseract.image_to_string(img)
+            text = pytesseract.image_to_string(img).lower()
             self.content[image] = text
             return text
         return self.content[image]
