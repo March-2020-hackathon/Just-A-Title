@@ -19,13 +19,13 @@ class InputData:
                 continue
             if preference not in database.ingredient_to_classes(i):
                 choice = False
-                inappropriate = self.content[i]
+                inappropriate.append(i)
                 break
         return choice, inappropriate
 
 
 if __name__ == "__main__":
-    image = "dna-energy-drink-ingredients.jpg"
+    image = "ICE-Lemonade-Ingredients.jpg"
     preference = "vegan"
     s = InputData(image)
     print(s.is_ok(preference))
