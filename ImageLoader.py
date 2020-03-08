@@ -49,7 +49,7 @@ class FoodClasses:
     def ingredient_to_classes(self, ingredient):
         """
         This function takes the name of an ingredient and returns
-        a list of its corresponding classes. Return None if not found.
+        a list of its corresponding classes. Return None if the ingredient is not found.
         :param ingredient: string
         :return: class: List
         """
