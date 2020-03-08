@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
+import Gallery from './Gallery'
 
 export default function LinksScreen() {
   return (
@@ -25,7 +26,11 @@ export default function LinksScreen() {
         onPress={() => WebBrowser.openBrowserAsync('https://forums.expo.io')}
         isLastOption
       />
+
+
     </ScrollView>
+
+
   );
 }
 

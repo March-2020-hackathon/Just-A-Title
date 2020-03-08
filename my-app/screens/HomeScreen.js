@@ -2,52 +2,71 @@ import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import * as WebBrowser from 'expo-web-browser';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Input, Button } from 'react-native-elements';
 
 import { MonoText } from '../components/StyledText';
+import img1 from "./logo.png";
+import img2 from "./camera.png";
 
 export default function HomeScreen() {
+
+  
+  this.state = {
+    pref: null
+  }
+
+
   return (
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
-            style={styles.welcomeImage}
-          />
-        </View>
 
-        <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
-
-          <Text style={styles.getStartedText}>Open up the code for this screen:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
+          <View style={styles.welcomeContainer}>
+            <Image
+              source={img1}
+              style={styles.welcomeImage}
+            />
           </View>
+          
+
+          <Input 
+            placeholder='Username'
+            leftIcon={{ type: 'font-awesome', name: 'chevron-right' }}
+          />
+
+          <Input
+            placeholder='Preferences'
+            leftIcon={
+              <Icon
+                name='user'
+                size={24}
+                color='black'
+              />}
+          />
+
+          <Button
+            title="Outline button"
+            type="outline"
+          />
 
           <Text style={styles.getStartedText}>
-            Change any of the text, save the file, and your app will automatically reload.
+            You take a picture and we tell you your restrictions.
           </Text>
-        </View>
+          <Text>* . *</Text>
+          <Text>\__/</Text>
 
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-          </TouchableOpacity>
-        </View>
+          <View style={styles.welcomeContainer}>
+          <Image 
+            source={img2}
+            style={styles.welcomeImage}
+          />
+          </View>
+
+
+
       </ScrollView>
 
-      <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-        <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-          <MonoText style={styles.codeHighlightText}>navigation/BottomTabNavigator.js</MonoText>
-        </View>
-      </View>
+    
     </View>
   );
 }
