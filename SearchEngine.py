@@ -1,6 +1,6 @@
 from ImageLoader import *
 from RealImageLoader import *
-import re
+import re, json
 
 
 class InputData:
@@ -21,11 +21,13 @@ class InputData:
                 choice = False
                 inappropriate.append(i)
                 break
-        return choice, inappropriate
+        to_ret = {'bool': choice, 'violation': inappropriate}
+        to_ret = json.dumps(to_ret)
+        return to_ret
 
 
 if __name__ == "__main__":
-    image = "ICE-Lemonade-Ingredients.jpg"
+    image = "Sweet+&+Tangy+Nutritionals.jfif"
     preference = "vegan"
     s = InputData(image)
     print(s.is_ok(preference))
