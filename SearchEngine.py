@@ -24,7 +24,7 @@ class InputData:
         to_ret = {'bool': choice, 'violation': inappropriate}
         return to_ret
 
-#
+
 # if __name__ == "__main__":
 #     image = "test_1.jpg"
 #     preference = "halal"

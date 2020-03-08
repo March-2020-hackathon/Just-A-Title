@@ -25,7 +25,8 @@ class ImageReader:
         :return: sentence: string
         """
         if image not in self.content:
-            img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            img = cv2.imread(image)
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             img = cv2.copyMakeBorder(img, 5, 5, 5, 5, cv2.BORDER_CONSTANT)
             text = pytesseract.image_to_string(img).lower()
             self.content[image] = text
