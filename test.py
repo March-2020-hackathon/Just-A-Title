@@ -33,3 +33,5 @@ def feedback():
     else:
         return json.dumps({'bool': True, 'violation': []})
 
+
+app.run(host='127.0.0.1')
