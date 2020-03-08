@@ -5,8 +5,8 @@ Doing some comparisons maybe
 import cv2
 import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
-​
-​
+
+
 class ImageReader:
     """
     This class reads images and stores the words on the image
@@ -16,7 +16,7 @@ class ImageReader:
         Initializes an image reader.
         """
         self.content = dict()
-​
+
     def read_image(self, image):
         """
         This function takes the name of an image and reads the image and stores the words
