@@ -25,13 +25,19 @@ class FoodClasses:
             data = json.load(json_file)
             for key in data:
                 new_key = key.lower()
+                if new_key[-1] == ')' or new_key[-1] == '*':
+                    new_key = new_key[:-1]
                 if new_key not in self._corresponding_ingredients:
                     self._corresponding_ingredients[new_key] = []
                     for item in data[key]:
                         item = item.lower()
+                        if item[-1] == ')' or item[-1] == '*':
+                            item = item[:-1]
                         self._corresponding_ingredients[new_key].append(item)
                 for ingredients in data[key]:
                     ingredients = ingredients.lower()
+                    if ingredients[-1] == ')' or ingredients[-1] == '*':
+                        ingredients = ingredients[:-1]
                     if ingredients not in self._corresponding_classes:
                         self._corresponding_classes[ingredients] = [new_key]
                     else:
@@ -74,11 +80,4 @@ class FoodClasses:
         classes
         :return: dict
         """
-<<<<<<< HEAD
-        return self._corresponding_classes
-    
-            
-
-=======
         return self._corresponding_ingredients
->>>>>>> 79e8ddc34861b21dab20b3d7cd9ddf0f7f18551f
