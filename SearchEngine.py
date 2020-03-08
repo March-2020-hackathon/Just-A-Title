@@ -27,16 +27,16 @@ class InputData:
 ​
 if __name__ == "__main__":
     image = "test_1.jpg"
-    preference = "vegen"
+    preference = "vegan"
     s = InputData(image)
     print(s.is_ok(preference))
 ​
     image = "ICE-Lemonade-Ingredients.jpg"
-    preference = "vegen"
+    preference = "vegan"
     s = InputData(image)
     print(s.is_ok(preference))
 ​
     image = "tj garlic sriacha info.jpg"
-    preference = "vegen"
+    preference = "vegan"
     s = InputData(image)
     print(s.is_ok(preference))
