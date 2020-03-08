@@ -1,5 +1,6 @@
 from flask import Flask, request
 from SearchEngine import *
+from waitress import serve
 import base64
 
 app = Flask(__name__)
@@ -34,4 +35,6 @@ def feedback():
         return json.dumps({'bool': True, 'violation': []})
 
 
-app.run(host='127.0.0.1')
+if __name__ == "__main__":
+   #app.run() ##Replaced with below code to run it using waitress 
+   serve(app, host='0.0.0.0', port=8000)
