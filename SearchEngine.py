@@ -25,7 +25,7 @@ class InputData:
 
 
 if __name__ == "__main__":
-    image = "test_1.jpg"
+    image = "dna-energy-drink-ingredients.jpg"
     preference = "vegan"
     s = InputData(image)
     print(s.is_ok(preference))

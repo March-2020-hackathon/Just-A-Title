@@ -27,7 +27,7 @@ class ImageReader:
         if image not in self.content:
             img = cv2.imread(image)
             img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            img = cv2.copyMakeBorder(img, 10, 10, 10, 10, cv2.BORDER_CONSTANT)
+            img = cv2.copyMakeBorder(img, 5, 5, 5, 5, cv2.BORDER_CONSTANT)
             text = pytesseract.image_to_string(img).lower()
             self.content[image] = text
             return text
