@@ -1,8 +1,8 @@
 from ImageLoader import *
 from RealImageLoader import *
 import re, json
-
-
+​
+​
 class InputData:
     def __init__(self, im):
         self.image_reader = ImageReader()
@@ -22,15 +22,13 @@ class InputData:
                 inappropriate.append(i)
                 break
         to_ret = {'bool': choice, 'violation': inappropriate}
-        to_ret = json.dumps(to_ret)
         return to_ret
-
-
+​
+​
 if __name__ == "__main__":
-    image = "Sweet+&+Tangy+Nutritionals.jfif"
-    preference = "vegan"
+    image = "test_1.jpg"
+    preference = "halal"
     s = InputData(image)
     print(s.is_ok(preference))
-
-
-
+​
+​

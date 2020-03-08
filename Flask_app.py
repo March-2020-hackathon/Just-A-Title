@@ -77,5 +77,7 @@ def fin ():
         obj = InputData(filename)
         value = obj.is_ok(preferences)
         return value
+ @app.route():
+ def update_user
 
 app.run(host='0.0.0.0')
