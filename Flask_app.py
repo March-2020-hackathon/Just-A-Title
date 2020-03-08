@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from ImageLoader import *
 from RealImageLoader import *
 from SearchEngine import *
@@ -81,3 +82,5 @@ def fin ():
  def update_user
 
 app.run(host='0.0.0.0')
+=======
+>>>>>>> 3ce488a5b3f9792c8dd2c104a9a569d935823736

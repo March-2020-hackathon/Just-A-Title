@@ -23,6 +23,7 @@ class InputData:
                 break
         to_ret = {'bool': choice, 'violation': inappropriate}
         return to_ret
+<<<<<<< HEAD
 ​
 ​
 if __name__ == "__main__":
@@ -32,3 +33,15 @@ if __name__ == "__main__":
     print(s.is_ok(preference))
 ​
 ​
+=======
+
+
+# if __name__ == "__main__":
+#     image = "test_1.jpg"
+#     preference = "halal"
+#     s = InputData(image)
+#     print(s.is_ok(preference))
+
+
+
+>>>>>>> 3ce488a5b3f9792c8dd2c104a9a569d935823736
